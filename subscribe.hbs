@@ -1,0 +1,23 @@
+{{!< default}}
+
+<div class="container-fluid">
+  <div class="d-flex justify-content-center align-items-center bg-light"id="subscribe-page">
+    <div class="col-12 col-md-8 col-lg-6 text-center">
+      {{^if success}}
+      <h1 class="txt-tooldata-secondary">Suscríbete en nuestro boletín</h1>
+
+      {{> "subscribe_form"}}
+
+      {{else}}
+      <h1 class="txt-tooldata-secondary">Gracias por suscribirse</h1>
+
+      <p class="txt-tooldata-secondary">
+        Su suscripción a <b>{{@blog.title}}</b> con el correo electrónico <i class="txt-tooldata-primary">{{email}}</i> ha sido éxitosa.
+      </p>
+      <a href="{{#if subscribed_url}}{{subscribed_url}}{{else}}{{@blog.url}}{{/if}}">
+        Volver
+      </a>
+      {{/if}}
+    </div>
+  </div>
+</div>

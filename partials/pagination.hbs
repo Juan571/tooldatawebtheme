@@ -1,0 +1,25 @@
+<nav aria-label="Page navigation example">
+  <ul class="pagination pagination-lg justify-content-center">
+
+    {{#if prev}}
+    <li class="page-item">
+      <a class="page-link" href="{{page_url prev}}" tabindex="-1" aria-disabled="true">
+        <i class="fas fa-angle-left"></i>
+      </a>
+    </li>
+    {{/if}}
+
+    <li class="page-info">
+      Paǵina {{page}} de {{pages}}
+    </li>
+
+    {{#if next}}
+    <li class="page-item">
+      <a class="page-link" href="{{page_url next}}" tabindex="1" aria-disabled="true">
+        <i class="fas fa-angle-right"></i>
+      </a>
+    </li>
+    {{/if}}
+
+  </ul>
+</nav>

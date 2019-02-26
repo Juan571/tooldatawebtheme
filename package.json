@@ -1,0 +1,33 @@
+{
+  "name": "tooldata",
+  "version": "1.0.0",
+  "description": "Tema de Tooldata para Ghost",
+  "engines": {
+    "ghost": ">=2.0.0",
+    "ghost-api": "v2"
+  },
+  "license": "MIT",
+  "screenshots": {
+    "desktop": "assets/screenshot-desktop.jpg",
+    "mobile": "assets/screenshot-mobile.jpg"
+  },
+  "author": {
+    "name": "Jaro Marval",
+    "email": "jaro@tooldata.io",
+    "url": "https://www.tooldata.io"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tooldata/tooldata-ghost-theme.git"
+  },
+  "keywords": [
+    "ghost",
+    "theme",
+    "tooldata",
+    "ghost-theme"
+  ],
+  "config": {
+    "posts_per_page": 12
+  },
+  "image_sizes": {}
+}

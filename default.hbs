@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>{{meta_title}}</title>
+
+  <meta name="theme-color" content="#3f505c">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#3f505c">
+  <meta name="msapplication-navbutton-color" content="#3f505c">
+  <meta name="msapplication-config" content="IEconfig.xml" />
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Roboto:300,400,700" rel="stylesheet">
+  <link rel="shortcut icon" href="{{asset "favicon.ico"}}" type="image/x-icon">
+  <link rel="icon" href="{{asset "favicon.ico"}}" type="image/x-icon">
+
+  <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@14/dist/smooth-scroll.polyfills.min.js"></script>
+  <link href="{{asset "styles/main-ef8ddd691d5a5fe50b08.css"}}" rel="stylesheet">
+
+  {{ghost_head}}
+
+</head>
+<body class="{{body_class}}">
+  <div id="bodyNet"></div>
+
+  {{navigation}}
+
+  {{{body}}}
+
+  {{> "footer"}}
+
+  <script id="dsq-count-scr" src="//tooldata.disqus.com/count.js"></script>
+  <script type="text/javascript" src="{{asset "js/app-ef8ddd691d5a5fe50b08.js"}}"></script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+{{!< default}}
+
+{{#post}}
+
+  {{> "header"}}
+
+  <div class="container-fluid">
+    <section class="bg-light">
+      <div class="row justify-content-center" id="post-content">
+        <div class="col-11 col-md-11 col-lg-10">
+          <div class="row">
+            <acticle class="col-12 col-md-7 col-lg-8">
+              <div id="post-body">
+
+                <picture>
+                  <source srcset="{{feature_image}}" type="image/jpg">
+                  <img src="{{feature_image}}" class="img-fluid img-thumbnail" alt="">
+                </picture>
+
+                <h1>
+                  {{title}}
+                </h1>
+
+                <div class="post-text">
+
+                  {{content}}
+
+                </div>
+
+                <div class="footer">
+                  <div>
+                    <i class="fa fa-user txt-tooldata-primary"></i>
+                    <p class="txt-tooldata-secondary">{{primary_author.name}}</p>
+                  </div>
+                  <div>
+                    <i class="far fa-calendar-check txt-tooldata-primary"></i>
+                    <time class="txt-tooldata-secondary" time="{{date published_at format="YYYY-MM-DDTHH:mm:ss.SS\Z"}}">
+                      {{date published_at format="DD MMM YYYY"}}
+                    </time>
+                  </div>
+                  <div>
+                    <i class="far fa-comment-dots txt-tooldata-primary"></i>
+                    <p class="txt-tooldata-secondary">
+                      <span class="social-counter disqus-comment-count" data-disqus-url="{{url absolute="true"}}">
+                        Comentarios
+                      </span>
+                    </p>
+                  </div>
+                </div><!-- Fin footer del Articulo -->
+              </div>
+
+              <div id="post-commentary">
+                <div class="commentary-content">
+                  <div id="disqus_thread"></div>
+                </div>
+              </div>
+              <script>
+                var disqus_config = function () {
+                  this.page.url = "{{url absolute="true"}}";
+                  this.page.identifier = "ghost-{{comment_id}}"
+                };
+                (function () {
+                  var d = document, s = d.createElement('script');
+                  s.src = 'https://tooldata.disqus.com/embed.js';
+                  s.setAttribute('data-timestamp', +new Date());
+                  (d.head || d.body).appendChild(s);
+                })();
+              </script>
+
+            </acticle>
+
+            <aside class="col-md-5 col-lg-4">
+              <h2>Síguenos</h2>
+
+              <section id="social-networks">
+                <a href="#">
+                  <div class="social-item" id="facebook">
+                    <div class="social-icons">
+                      <i class="fab fa-facebook-f"></i>
+                    </div>
+                    <span class="social-name">
+                      facebook
+                    </span>
+                    <span class="social-counter">
+                      1.5K fans
+                    </span>
+                  </div>
+                </a>
+
+                <a href="#">
+                  <div class="social-item" id="twitter">
+                    <div class="social-icons">
+                      <i class="fab fa-twitter"></i>
+                    </div>
+                    <span class="social-name">
+                      twitter
+                    </span>
+                    <span class="social-counter">
+                      1.5K fans
+                    </span>
+                  </div>
+                </a>
+
+                <a href="#">
+                  <div class="social-item" id="instagram">
+                    <div class="social-icons">
+                      <i class="fab fa-instagram"></i>
+                    </div>
+                    <span class="social-name">
+                      instagram
+                    </span>
+                    <span class="social-counter">
+                      1.5K fans
+                    </span>
+                  </div>
+                </a>
+
+                <a href="#">
+                  <div class="social-item" id="post">
+                    <div class="social-icons">
+                      <i class="far fa-edit"></i>
+                    </div>
+                    <span class="social-name">
+                      post
+                    </span>
+                    <span class="social-counter">
+
+                      {{#get "posts" filter="primary_author:{{primary_author.slug}}"}}
+                        {{posts.length}} Posts
+                      {{/get}}
+                    </span>
+                  </div>
+                </a>
+
+                <a href="#post-commentary">
+                  <div class="social-item" id="commentary">
+                    <div class="social-icons">
+                      <i class="far fa-comment-dots"></i>
+                    </div>
+                    <span class="social-name">
+                      comentarios
+                    </span>
+                    <span class="social-counter disqus-comment-count" data-disqus-url="{{url absolute="true"}}">
+                      Comentarios
+                    </span>
+                  </div>
+                </a>
+              </section>
+
+
+              <h2>Boletín</h2>
+
+              {{> "subscribe_form"}}
+
+              <h2>Posts Recientes</h2>
+
+              <section id="latest">
+                {{#get "posts" limit="3" order="published_at desc"}}
+
+                  {{#foreach posts}}
+
+                    {{> "post-partials"}}
+
+                  {{/foreach}}
+                {{/get}}
+              </section>
+
+              <!-- <h2>Buscar</h2>
+
+              <section id="newsletter">
+                <div>
+                  <input type="email" placeholder="Buscar">
+                  <i class="fas fa-search"></i>
+                </div>
+              </section> -->
+
+            </aside>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+{{/post}}

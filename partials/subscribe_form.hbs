@@ -1,0 +1,27 @@
+<form method="post" action="/subscribe/" id="newsletter">
+  <input class="confirm" type="hidden" name="confirm">
+  <input class="location" type="hidden" name="location" value="">
+  <input class="referrer" type="hidden" name="referrer" value="">
+
+  <div>
+    <input type="email" name="email" placeholder="Correo Electrónico">
+    <button type="submit">
+      <i class="fas fa-pencil-alt"></i>
+    </button>
+  </div>
+  <p>
+    Ingrese su correo electrónico para estar siempre informado
+  </p>
+
+  <script>
+    (function (g, h, o, s, t) {
+      var buster = function (b, m) {
+        h[o]('input.' + b).forEach(function (i) {
+          i.value = i.value || m;
+        });
+      };
+      buster('location', g.location.href);
+      buster('referrer', h.referrer);
+    })(window, document, 'querySelectorAll', 'value');
+  </script>
+</form>

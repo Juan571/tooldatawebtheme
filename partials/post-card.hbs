@@ -1,0 +1,40 @@
+<div class="col-12 col-md-4">
+  <article class="blog-entry bg-white"><!-- Articulo -->
+    {{#if feature_image}}
+    <a href="{{url}}">
+      <picture>
+        <source srcset="{{feature_image}}" type="image/jpg">
+        <img src="{{feature_image}}" class="img-fluid img-thumbnail" alt="">
+      </picture>
+    </a>
+    {{/if}}
+
+    <h5 class="title-entry">
+      <a href="{{url}}">
+        {{title}}
+      </a>
+    </h5>
+
+    <div class="text-entry txt-tooldata-secondary">
+      {{excerpt words="33"}}
+    </div>
+
+    <div class="data-entry"><!-- footer del Articulo -->
+      <div>
+        <i class="fa fa-user txt-tooldata-primary"></i>
+        <p class="txt-tooldata-secondary">{{primary_author.name}}</p>
+      </div>
+
+      <div>
+        <i class="far fa-calendar-check txt-tooldata-primary"></i>
+        <time class="txt-tooldata-secondary" time="{{date published_at format="YYYY-MM-DDTHH:mm:ss.SS\Z"}}" >{{date published_at format="DD MMM YYYY"}}</time>
+      </div>
+
+      <div>
+        <i class="far fa-comment-dots txt-tooldata-primary"></i>
+        <p class="txt-tooldata-secondary disqus-comment-count" data-disqus-url="{{url absolute="true"}}">Comentarios</p>
+      </div>
+    </div><!-- Fin footer del Articulo -->
+
+  </article><!-- Fin Articulo -->
+</div>

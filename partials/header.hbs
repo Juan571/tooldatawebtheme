@@ -1,0 +1,53 @@
+{{^is "home"}}
+<section class="tooldata-header">
+  <div class="header-content">
+    <h1 class="goFront">Blog</h1>
+
+    <ul class="goFront">
+      <li>
+        <a href="{{@blog.url}}">
+          Inicio
+        </a>
+      </li>
+      {{#is "page"}}
+        <li>
+          {{post.title}}
+        </li>
+      {{/is}}
+      {{#is "author"}}
+        <li>
+          <a href="{{@blog.url}}/about/">
+          about
+          </a>
+        </li>
+        <li>
+          {{primary_author.name}}
+        </li>
+      {{/is}}
+      {{#is "tag"}}
+        <li>
+          {{tag.name}}
+        </li>
+      {{/is}}
+      {{#is "post"}}
+        <li>
+          <a href="{{@blog.url}}/blog/">
+            Blog
+          </a>
+        </li>
+        {{#primary_tag}}
+        <li>
+          <a href="{{url absolute="true"}}">
+            {{name}}
+          </a>
+        </li>
+        {{/primary_tag}}
+        <li>
+          {{title}}
+        </li>
+      {{/is}}
+    </ul>
+
+  </div>
+</section>
+{{/is}}
