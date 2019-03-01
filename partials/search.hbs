@@ -1,0 +1,25 @@
+<h2>Buscar</h2>
+
+<section id="newsletter">
+  <div>
+    <input type="text" name="search" id="search" placeholder="Buscar..." autocomplete="off">
+    <i class="fas fa-search"></i>
+  </div>
+  <span id="results"></span>
+</section>
+
+<script src="{{asset "js/haunted-theme.min.js"}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/ghost-search@1.0.1/dist/ghost-search.min.js"></script>
+<script>
+  let ghostSearch = new GhostSearch({
+    key: '0fabf3576e92154a98bf19f5ef',
+    host: 'http://localhost:2368',
+    version: 'v2',
+    input: '#search',
+    results: '#results',
+    template: function(result) {
+              let url = [location.protocol, '//', location.host].join('');
+              return '<li><a class="card-tag-post" style="font-size: x-large;" href="' + url + '/' + result.slug + '/">' + result.title + '</a></l1>';
+          },
+  })
+</script>
