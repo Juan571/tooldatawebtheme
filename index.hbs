@@ -1,8 +1,8 @@
 {{!< default}}
 
 <section class="" id="tooldata-banner">
-  <div class="container">
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <div class="">
+    <div id="carouselExampleIndicators" class="carousel slide" data-interval="15000" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -13,15 +13,11 @@
 
     <div class="banner-content">
       <div class="banner-text">
-        <h1>
-          <span>Entorno</span>
-          Digital
-        </h1>
-        <p>
-          Monitoreamos, recolectamos, analizamos y canalizamos información
-          del entorno digital de una marca, producto o temática.
-        </p>
-        <a href="post.html">Ver más</a>
+        <h3 >
+          Tooldata es una empresa, con visión latinoamericana, que facilita el acceso y la comprensión de información, entendible por todos, desde redes sociales
+        </h3>
+
+        <!--a href="post.html">Ver más</a-->
       </div>
     </div>
         </div>
@@ -29,15 +25,11 @@
 
     <div class="banner-content">
       <div class="banner-text">
-        <h1>
-          <span>Entorno</span>
-          Digital
-        </h1>
-        <p>
-          Monitoreamos, recolectamos, analizamos y canalizamos información
-          del entorno digital de una marca, producto o temática.
-        </p>
-        <a href="post.html">Ver más</a>
+        <h3>
+          Escuchamos y analizamos todo lo que se escribe en redes sociales para transformarlo en información de valor para tu empresa.
+        </h3>
+
+        <!--a href="post.html">Ver más</a-->
       </div>
     </div>
         </div>
@@ -45,15 +37,11 @@
 
     <div class="banner-content">
       <div class="banner-text">
-        <h1>
-          <span>Entorno</span>
-          Digital
-        </h1>
-        <p>
-          Monitoreamos, recolectamos, analizamos y canalizamos información
-          del entorno digital de una marca, producto o temática.
-        </p>
-        <a href="post.html">Ver más</a>
+        <h3>
+          Llevamos más de 8 años trabajando con empresas públicas y privadas en sectores de telecomunicaciones, banca, gobierno, tiendas de departamento, educación y agencias de comunicación y marketing en Chile, Colombia y México.
+        </h3>
+
+        <!--a href="post.html">Ver más</a-->
       </div>
     </div>
         </div>
@@ -457,54 +445,7 @@
   </section>
 </section><!-- Fin Área de Equipo -->
 
-<section class="bg-light">
-  <section class="d-flex flex-column justify-content-center align-items-center" id="tooldata-blog">
-    <h3 class="tooldata-title txt-tooldata-secondary">Blog</h3>
 
-    <div id="blog-sections">
-      <select name="" id="">
-        {{#get "tags"}}
-          {{#foreach tags}}
-            <option value="{{url}}">
-              {{name}}
-            </option>
-          {{/foreach}}
-        {{/get}}
-      </select>
-    </div>
-
-    <div class="d-flex justify-content-between" id="blog-tags">
-      {{#get "tags"}}
-        {{#foreach tags}}
-          <a href="{{url}}" class="blog-link goFront">
-            {{name}}
-          </a>
-        {{/foreach}}
-      {{/get}}
-    </div>
-
-    <div class="col-12 col-md-11">
-      <div class="row justify-content-center">
-
-      {{#get "posts" limit="3" order="published_at desc" include="authors"}}
-
-        {{#foreach posts}}
-          {{log post}}
-          {{> "post-card"}}
-
-        {{/foreach}}
-      {{/get}}
-
-
-      </div>
-    </div>
-
-    <a href="/blog/" class="blog-link goFront">
-      Ver Todos
-    </a>
-
-  </section>
-</section>
 
 <section class="bg-white">
   <section class="d-flex flex-column justify-content-center align-items-center" id="tooldata-contact">
